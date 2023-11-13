@@ -1,0 +1,33 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/mnt/nfs/homes/ajeannin/finalphilo/srcs/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+are_correct	init.c	/^static int	are_correct(const char *str)$/;"	f	typeref:typename:int	file:
+check_all_philos_death	death.c	/^void	*check_all_philos_death(void	*arg)$/;"	f	typeref:typename:void *
+check_death_for_each_philo	death.c	/^static int	check_death_for_each_philo(t_philo *philo, long cur_time)$/;"	f	typeref:typename:int	file:
+clean_free	clean_exit.c	/^int	clean_free(t_philo *philos, t_fork *forks, char *error)$/;"	f	typeref:typename:int
+end_of_journey	life.c	/^char	*end_of_journey(t_philo **philos, t_utils *utils)$/;"	f	typeref:typename:char *
+ft_atoi	utils.c	/^int	ft_atoi(const char *str)$/;"	f	typeref:typename:int
+ft_strlen	utils.c	/^int	ft_strlen(const char *s)$/;"	f	typeref:typename:int
+ft_usleep	utils.c	/^void	ft_usleep(long int time_in_ms)$/;"	f	typeref:typename:void
+get_timestamp	utils.c	/^long	get_timestamp(void)$/;"	f	typeref:typename:long
+is_dead	death.c	/^int	is_dead(t_philo *philo)$/;"	f	typeref:typename:int
+live_their_day	life.c	/^void	*live_their_day(void *arg)$/;"	f	typeref:typename:void *
+main	philo.c	/^int	main(int ac, char **av)$/;"	f	typeref:typename:int
+msg	handle_error.c	/^int	msg(char *msg)$/;"	f	typeref:typename:int
+parsing	init.c	/^char	*parsing(int ac, char **av, t_utils *utils)$/;"	f	typeref:typename:char *
+philos_birth	life.c	/^char	*philos_birth(t_philo **philos, t_fork **forks, t_utils *utils)$/;"	f	typeref:typename:char *
+philos_day_plan	life.c	/^char	*philos_day_plan(t_philo **philos, t_utils *utils)$/;"	f	typeref:typename:char *
+philos_educ	life.c	/^char	*philos_educ(t_philo *philo, t_fork **forks, t_utils *utils, int cur)$/;"	f	typeref:typename:char *
+release_fork	forks.c	/^void	release_fork(char fork_name, t_philo *philo)$/;"	f	typeref:typename:void
+release_forks_and_sleep	forks.c	/^void	release_forks_and_sleep(t_philo *philo)$/;"	f	typeref:typename:void
+stop_threads	death.c	/^void	stop_threads(t_philo *philo)$/;"	f	typeref:typename:void
+take_fork	forks.c	/^void	take_fork(char fork_name, t_philo *philo)$/;"	f	typeref:typename:void
+write_state	utils.c	/^void	write_state(char *str, t_philo *philo)$/;"	f	typeref:typename:void
