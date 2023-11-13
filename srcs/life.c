@@ -6,7 +6,7 @@
 /*   By: ajeannin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 18:26:17 by ajeannin          #+#    #+#             */
-/*   Updated: 2023/06/27 20:36:36 by ajeannin         ###   ########.fr       */
+/*   Updated: 2023/11/13 17:23:29 by ajeannin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,8 +119,8 @@ char	*end_of_journey(t_philo **philos, t_utils *utils)
 			error = ERROR_WAITING;
 		cur++;
 	}
-//	if (pthread_join(utils->death_thread, NULL))
-//		error = ERROR_WAITING;
+	if (pthread_join(utils->death_thread, NULL))
+		error = ERROR_WAITING;
 	return (error);
 }
 

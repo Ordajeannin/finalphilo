@@ -6,7 +6,7 @@
 /*   By: ajeannin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 18:50:50 by ajeannin          #+#    #+#             */
-/*   Updated: 2023/06/27 20:01:52 by ajeannin         ###   ########.fr       */
+/*   Updated: 2023/11/13 17:18:49 by ajeannin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int	main(int ac, char **av)
 		return (msg(error));
 	}
 	error = end_of_journey(&philos, &utils);
-//	utils.end++;
 	if (error != NULL)
 		return (clean_free(philos, forks, error));
 	return (clean_free(philos, forks, error));

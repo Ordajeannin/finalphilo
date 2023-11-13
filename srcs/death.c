@@ -6,7 +6,7 @@
 /*   By: ajeannin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 17:46:20 by ajeannin          #+#    #+#             */
-/*   Updated: 2023/06/27 19:51:30 by ajeannin         ###   ########.fr       */
+/*   Updated: 2023/11/13 17:19:11 by ajeannin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,6 @@ void	*check_all_philos_death(void	*arg)
 
 	philos = (t_philo **)arg;
 	utils = philos[0]->utils;
-//	while (utils->end == 0)
 	while (1)
 	{
 		cur = 0;

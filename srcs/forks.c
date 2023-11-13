@@ -6,7 +6,7 @@
 /*   By: ajeannin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:44:20 by ajeannin          #+#    #+#             */
-/*   Updated: 2023/06/27 19:26:42 by ajeannin         ###   ########.fr       */
+/*   Updated: 2023/11/13 17:18:28 by ajeannin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,6 @@ void	release_forks_and_sleep(t_philo *philo)
 			else
 				return ;
 		}
-//		ft_usleep(philo->utils->t_to_sleep);
 		write_state("is thinking", philo);
 	}
 }

@@ -6,7 +6,7 @@
 #    By: ajeannin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/19 18:37:40 by ajeannin          #+#    #+#              #
-#    Updated: 2023/06/27 18:21:22 by ajeannin         ###   ########.fr        #
+#    Updated: 2023/11/13 17:24:50 by ajeannin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ INCLUDES		= -Iincludes
 SRC_DIR			= srcs/
 OBJ_DIR			= obj/
 CC				= gcc
-CFLAGS			= -Wall -Werror -Wextra
+CFLAGS			= -g -Wall -Werror -Wextra
 
 
 
