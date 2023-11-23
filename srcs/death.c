@@ -6,7 +6,7 @@
 /*   By: ajeannin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 17:46:20 by ajeannin          #+#    #+#             */
-/*   Updated: 2023/11/23 17:31:06 by ajeannin         ###   ########.fr       */
+/*   Updated: 2023/11/23 17:54:29 by ajeannin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,18 @@ static int	check_death_for_each_philo(t_philo *philo, long cur_time)
 	return (dead);
 }
 
+static int	do_we_stop(t_utils *utils)
+{
+	int	i;
+
+	i = 0;
+	pthread_mutex_lock(&(utils->m_stop_death));
+	if (utils->stop == 1)
+		i = 1;
+	pthread_mutex_unlock(&(utils->m_stop_death));
+	return (i);
+}
+
 /*
  * Boucle a l'infini sur tous les philosophes pour checker leurs pouls
  * Prend en parametre la liste des philos, qu'il faut reatribuer
@@ -91,13 +103,8 @@ void	*check_all_philos_death(void	*arg)
 	utils = philos[0]->utils;
 	while (1)
 	{
-		pthread_mutex_lock(&(utils->m_stop_death));
-		if (utils->stop == 1)
-		{
-			pthread_mutex_unlock(&(utils->m_stop_death));
+		if (do_we_stop(utils) == 1)
 			break ;
-		}
-		pthread_mutex_unlock(&(utils->m_stop_death));
 		cur = 0;
 		cur_time = get_timestamp() - utils->start_time;
 		while (cur < utils->nb_of_philos)

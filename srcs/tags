@@ -13,6 +13,7 @@ are_correct	init.c	/^static int	are_correct(const char *str)$/;"	f	typeref:typen
 check_all_philos_death	death.c	/^void	*check_all_philos_death(void	*arg)$/;"	f	typeref:typename:void *
 check_death_for_each_philo	death.c	/^static int	check_death_for_each_philo(t_philo *philo, long cur_time)$/;"	f	typeref:typename:int	file:
 clean_free	clean_exit.c	/^int	clean_free(t_philo *philos, t_fork *forks, char *error)$/;"	f	typeref:typename:int
+do_we_stop	death.c	/^static int	do_we_stop(t_utils *utils)$/;"	f	typeref:typename:int	file:
 end_of_journey	life.c	/^char	*end_of_journey(t_philo **philos, t_utils *utils)$/;"	f	typeref:typename:char *
 ft_atoi	utils.c	/^int	ft_atoi(const char *str)$/;"	f	typeref:typename:int
 ft_strlen	utils.c	/^int	ft_strlen(const char *s)$/;"	f	typeref:typename:int
