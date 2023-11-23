@@ -6,7 +6,7 @@
 /*   By: ajeannin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 17:40:54 by ajeannin          #+#    #+#             */
-/*   Updated: 2023/11/13 17:01:58 by ajeannin         ###   ########.fr       */
+/*   Updated: 2023/11/23 17:15:25 by ajeannin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,6 @@ char	*parsing(int ac, char **av, t_utils *utils)
 		|| pthread_mutex_init(&(utils->m_is_dead), NULL) != 0)
 		return (ERROR_M_INIT);
 	utils->end = 0;
+	utils->stop = 0;
 	return (NULL);
 }

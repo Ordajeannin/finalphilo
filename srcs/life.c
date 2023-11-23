@@ -6,7 +6,7 @@
 /*   By: ajeannin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 18:26:17 by ajeannin          #+#    #+#             */
-/*   Updated: 2023/11/13 17:23:29 by ajeannin         ###   ########.fr       */
+/*   Updated: 2023/11/23 17:22:28 by ajeannin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,8 @@ char	*philos_educ(t_philo *philo, t_fork **forks, t_utils *utils, int cur)
 	philo->l_fork->is_use = FREE;
 	if (pthread_mutex_init(&(philo->m_last_meal), NULL) != 0
 		|| pthread_mutex_init(&(philo->l_fork->lock), NULL) != 0
-		|| pthread_mutex_init(&(philo->r_fork->lock), NULL) != 0)
+		|| pthread_mutex_init(&(philo->r_fork->lock), NULL) != 0
+		|| pthread_mutex_init(&(philo->utils->m_stop_death), NULL) != 0)
 		return (ERROR_M_INIT);
 	return (NULL);
 }
@@ -119,6 +120,9 @@ char	*end_of_journey(t_philo **philos, t_utils *utils)
 			error = ERROR_WAITING;
 		cur++;
 	}
+	pthread_mutex_lock(&(utils->m_stop_death));
+	utils->stop = 1;
+	pthread_mutex_unlock(&(utils->m_stop_death));
 	if (pthread_join(utils->death_thread, NULL))
 		error = ERROR_WAITING;
 	return (error);

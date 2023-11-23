@@ -6,7 +6,7 @@
 /*   By: ajeannin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 19:02:04 by ajeannin          #+#    #+#             */
-/*   Updated: 2023/11/13 17:24:23 by ajeannin         ###   ########.fr       */
+/*   Updated: 2023/11/23 17:15:36 by ajeannin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ typedef struct s_utils
 	pthread_mutex_t		console_mutex;
 	int					is_dead;
 	pthread_mutex_t		m_is_dead;
+	pthread_mutex_t		m_stop_death;
+	int					stop;
 	pthread_t			death_thread;
 }	t_utils;
 

@@ -6,7 +6,7 @@
 /*   By: ajeannin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 17:46:20 by ajeannin          #+#    #+#             */
-/*   Updated: 2023/11/13 17:19:11 by ajeannin         ###   ########.fr       */
+/*   Updated: 2023/11/23 17:31:06 by ajeannin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,13 @@ void	*check_all_philos_death(void	*arg)
 	utils = philos[0]->utils;
 	while (1)
 	{
+		pthread_mutex_lock(&(utils->m_stop_death));
+		if (utils->stop == 1)
+		{
+			pthread_mutex_unlock(&(utils->m_stop_death));
+			break ;
+		}
+		pthread_mutex_unlock(&(utils->m_stop_death));
 		cur = 0;
 		cur_time = get_timestamp() - utils->start_time;
 		while (cur < utils->nb_of_philos)
