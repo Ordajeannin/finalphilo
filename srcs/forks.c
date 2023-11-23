@@ -6,7 +6,7 @@
 /*   By: ajeannin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:44:20 by ajeannin          #+#    #+#             */
-/*   Updated: 2023/11/13 17:18:28 by ajeannin         ###   ########.fr       */
+/*   Updated: 2023/11/23 17:41:27 by ajeannin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,10 +91,17 @@ void	release_forks_and_sleep(t_philo *philo)
 		write_state("is sleeping", philo);
 		while (sleep-- > 0)
 		{
+			pthread_mutex_lock(&(philo->utils->m_is_dead));
 			if (philo->utils->is_dead == 0)
+			{
+				pthread_mutex_unlock(&(philo->utils->m_is_dead));
 				ft_usleep(1);
+			}
 			else
+			{
+				pthread_mutex_unlock(&(philo->utils->m_is_dead));
 				return ;
+			}
 		}
 		write_state("is thinking", philo);
 	}
