@@ -16,6 +16,7 @@ clean_free	clean_exit.c	/^int	clean_free(t_philo *philos, t_fork *forks, char *e
 do_we_stop	death.c	/^static int	do_we_stop(t_utils *utils)$/;"	f	typeref:typename:int	file:
 end_of_journey	life.c	/^char	*end_of_journey(t_philo **philos, t_utils *utils)$/;"	f	typeref:typename:char *
 ft_atoi	utils.c	/^int	ft_atoi(const char *str)$/;"	f	typeref:typename:int
+ft_eat_while_alive	forks.c	/^void	ft_eat_while_alive(t_philo *philo)$/;"	f	typeref:typename:void
 ft_strlen	utils.c	/^int	ft_strlen(const char *s)$/;"	f	typeref:typename:int
 ft_usleep	utils.c	/^void	ft_usleep(long int time_in_ms)$/;"	f	typeref:typename:void
 get_timestamp	utils.c	/^long	get_timestamp(void)$/;"	f	typeref:typename:long

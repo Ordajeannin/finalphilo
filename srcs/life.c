@@ -6,7 +6,7 @@
 /*   By: ajeannin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 18:26:17 by ajeannin          #+#    #+#             */
-/*   Updated: 2023/11/23 17:22:28 by ajeannin         ###   ########.fr       */
+/*   Updated: 2023/11/23 18:40:03 by ajeannin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,8 @@ char	*philos_day_plan(t_philo **philos, t_utils *utils)
 /*
  * Permet d'attendre la fin de l'execution de chaque thread, 
  * grace a "pthread_join"
- * ... Rien de +
+ * set stop a 1 permet d'arreter death_thread avant qu'une mort ne se declare
+ * (si il n'y avait que x repas, par ex)
 */
 char	*end_of_journey(t_philo **philos, t_utils *utils)
 {
@@ -150,7 +151,7 @@ void	*live_their_day(void *arg)
 
 	philo = (t_philo *)arg;
 	if (philo->id % 2 != 0)
-		ft_usleep(philo->utils->t_to_eat);
+		ft_eat_while_alive(philo);
 	while (!is_dead(philo))
 	{
 		if (philo->meal_nb >= philo->utils->meal_max
@@ -166,7 +167,7 @@ void	*live_their_day(void *arg)
 			pthread_mutex_lock(&(philo->m_last_meal));
 			philo->last_meal = get_timestamp() - philo->utils->start_time;
 			pthread_mutex_unlock(&(philo->m_last_meal));
-			ft_usleep(philo->utils->t_to_eat);
+			ft_eat_while_alive(philo);
 			release_forks_and_sleep(philo);
 		}
 	}

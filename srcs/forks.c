@@ -6,7 +6,7 @@
 /*   By: ajeannin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:44:20 by ajeannin          #+#    #+#             */
-/*   Updated: 2023/11/23 17:41:27 by ajeannin         ###   ########.fr       */
+/*   Updated: 2023/11/23 18:45:06 by ajeannin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,5 +104,31 @@ void	release_forks_and_sleep(t_philo *philo)
 			}
 		}
 		write_state("is thinking", philo);
+	}
+}
+
+/*
+ * Permet de manger, ou d'attendre le temps d'un repas.
+ * Verifie si un philo ne meurt pas entre temps!
+ * On ne continue pas de manger si un copain meurt m'enfin
+*/
+void	ft_eat_while_alive(t_philo *philo)
+{
+	int	time;
+
+	time = philo->utils->t_to_eat;
+	while (time-- > 0)
+	{
+		pthread_mutex_lock(&(philo->utils->m_is_dead));
+		if (philo->utils->is_dead == 0)
+		{
+			pthread_mutex_unlock(&(philo->utils->m_is_dead));
+			ft_usleep(1);
+		}
+		else
+		{
+			pthread_mutex_unlock(&(philo->utils->m_is_dead));
+			return ;
+		}
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: ajeannin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 17:46:20 by ajeannin          #+#    #+#             */
-/*   Updated: 2023/11/23 17:54:29 by ajeannin         ###   ########.fr       */
+/*   Updated: 2023/11/23 18:46:09 by ajeannin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,10 @@ static int	check_death_for_each_philo(t_philo *philo, long cur_time)
 	return (dead);
 }
 
+/*
+ * Verifie si le nombre de repas n'a pas ete atteint
+ * auquel cas, arret du death_thread
+*/
 static int	do_we_stop(t_utils *utils)
 {
 	int	i;

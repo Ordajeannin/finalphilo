@@ -6,7 +6,7 @@
 /*   By: ajeannin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 19:02:04 by ajeannin          #+#    #+#             */
-/*   Updated: 2023/11/23 17:15:36 by ajeannin         ###   ########.fr       */
+/*   Updated: 2023/11/23 18:20:39 by ajeannin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ void	write_state(char *str, t_philo *philo);
 void	take_fork(char fork_name, t_philo *philo);
 void	release_fork(char fork_name, t_philo *philo);
 void	release_forks_and_sleep(t_philo *philo);
+void	ft_eat_while_alive(t_philo *philo);
 long	get_timestamp(void);
 int		ft_atoi(const char *str);
 int		ft_strlen(const char *s);
